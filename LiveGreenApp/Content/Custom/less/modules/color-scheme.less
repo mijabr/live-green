@@ -1,0 +1,62 @@
+﻿.color-scheme-wrap {
+    p {
+        margin-bottom: 40px;
+    }
+
+    .color-scheme-left {
+        display: block;
+        float: left;
+        width: 160px;
+    }
+
+    .color-scheme-right {
+        width: 600px;
+        float: left;
+    }
+
+    .color-scheme-saved-color {
+        width: 100px;
+        height: 100px;
+        display: block;
+        float: left;
+        .white-font;
+        padding: 25px;
+        outline: 1px solid #dddddd;
+        background-color: #1d92ef;
+        border: 5px solid white;
+        text-align: center;
+    }
+
+    .color-scheme-picker {
+        display: block;
+        float: left;
+        width: 100%;
+        margin-bottom: 30px;
+
+        li {
+            display: block;
+            list-style: none;
+
+            a {
+                display: block;
+                float: left;
+                .rounded-corners(4px);
+                width: 40px;
+                height: 40px;
+                margin: 0 10px 10px 0;
+                text-align:center;
+                &:hover{
+                    text-decoration:none;
+                }
+                &:before {
+                    display:none;
+                    content: "\e600";
+                    .white-font;
+                    font-family: 'icomoon';
+                    font-size:18px;
+                    line-height:40px;
+                }
+            }
+        }
+    }
+}

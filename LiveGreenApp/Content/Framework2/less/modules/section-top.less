@@ -1,0 +1,57 @@
+﻿.section-top {
+    display: block;
+    float: left;
+    width: 100%;
+
+    .section-top-left {
+        float: left;
+
+        h3 {
+            .roboto-medium-font;
+            .grey-37-font;
+            margin-bottom:0px;
+
+            .icon {
+                .grey-60-font;
+            }
+        }
+    }
+
+    .section-top-right {
+        float: right;
+        text-align: right;
+
+        a {
+            line-height: 20px;
+
+            .right-panel & {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .icon {
+        display: block;
+        float: left;
+        margin-right: 5px;
+        font-size: 20px;
+        margin-top: -1px;
+    }
+
+    &.section-top-with-medium-button{
+        .section-top-left{
+            h3{
+                line-height:40px;
+                margin-bottom:0;
+            }
+            
+        }
+    }
+    &.section-top-with-small-button{
+        .section-top-right{
+            .btn-small{
+                margin-top:16px;
+            }
+        }
+    }
+}

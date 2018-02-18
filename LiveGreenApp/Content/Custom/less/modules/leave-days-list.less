@@ -1,0 +1,78 @@
+﻿.leave-days-list-wrap{
+    li{
+        list-style:none;
+        background-color:#f9f9f9;
+        line-height:46px;
+        padding:0 10px;
+        border-bottom:1px solid #d7d7d7;
+
+        @media (max-width: 767px) {
+
+            > div > div:nth-child(1):before{
+                content:"Date:";
+                font-weight:bold;
+                float:left;
+                margin-right:10px;
+            }
+            > div > div:nth-child(2):before{
+                content:"Day:";
+                font-weight:bold;
+                float:left;
+                margin-right:10px;
+            }
+            > div > div:nth-child(3):before{
+                content:"Leave Taken:";
+                font-weight:bold;
+                float:left;
+                margin-right:10px;
+            }
+        }
+
+        &.leave-days-list-head{
+            background-color:#ffffff;
+            font-weight:bold;
+            @media (max-width: 767px) {
+                display:none;
+            }
+        }
+    }
+    &.leave-days-list-wrap-max-height{
+        max-height:282px;
+        overflow-y:scroll;
+        overflow-x:hidden;
+        position:relative;
+        @media (max-width: 767px) {
+            max-height:224px;
+            li{
+                line-height:30px;
+                padding:10px;
+            }
+        }
+    }
+}
+
+.leave-days-list-selection{
+    .rounded-corners;
+    border:1px solid #bcbcbc;
+    float:left;
+    padding:0;
+    line-height:30px;
+    margin-top:7px;
+    .leave-days-list-selection-select{
+        border:none;
+        outline:none;
+        padding:5px;
+        .rounded-corners(5px 0px 0px 5px);
+    }
+    .leave-days-list-selection-unit{
+        border-left:1px solid #bcbcbc;
+        background-color:#eeeeee;
+        line-height:31px;
+        padding:8px;
+        .rounded-corners(0px 5px 5px 0px);
+    }
+}
+
+.leave-days-list-total{
+    margin-top:20px;
+}

@@ -1,0 +1,333 @@
+﻿.leave-calendar-wrap {
+
+    .leave-calendar-top {
+        position: relative;
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .leave-calendar-month-switch {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .btn {
+                float: left;
+
+                &:first-child {
+                    .rounded-corners(4px 0px 0px 4px);
+                    margin-right: -1px;
+                }
+
+                &:last-child {
+                    .rounded-corners(0px 4px 4px 0px);
+                }
+
+                .icon {
+                    font-size: 20px;
+                    line-height: 28px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    .leave-calendar-left {
+        width: 15%;
+        float: left;
+        display: block;
+    }
+
+    .leave-calendar-right {
+        width: 85%;
+        float: left;
+        display: block;
+    }
+
+    .leave-calendar-header {
+        width: 100%;
+        float: left;
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
+
+        .leave-calendar-select {
+            select {
+                padding: 5px 10px;
+                width: ~"calc(100% - 15px)";
+                float: left;
+            }
+        }
+
+        .leave-calendar-header-days {
+            width: 100%;
+            float: left;
+            height: 50px;
+
+            li {
+                border-top: 1px solid #d7d7d7;
+                border-bottom: 1px solid #d7d7d7;
+                background-color: #f3f3f3;
+                list-style: none;
+                text-align: center;
+                float: left;
+                width: 35px;
+                height: 48px;
+                line-height: 48px;
+
+                &.weekend {
+                    background-color: #eeeeee;
+                    .grey-75-font;
+                }
+
+                &.today {
+                    background-color: #357ebd;
+                    .white-font;
+                }
+
+                &:first-child {
+                    border-left: 1px solid #d7d7d7;
+                }
+
+                &:last-child {
+                    border-right: 1px solid #d7d7d7;
+                }
+            }
+        }
+    }
+
+    .leave-calendar-content {
+        float: left;
+        width: 100%;
+        margin-top: -2px;
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
+
+        .leave-calendar-employee {
+            li {
+                border-top: 1px solid #d7d7d7;
+                border-bottom: 1px solid #d7d7d7;
+                margin-top: -1px;
+                list-style: none;
+                height: 50px;
+                line-height: 48px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                position: relative;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 10px;
+                    border: 1px solid #d7d7d7;
+                }
+            }
+        }
+
+        .leave-calendar {
+            float: left;
+            width: 100%;
+            display: block;
+
+            .leave-calendar-row {
+                clear: both;
+                height: 49px;
+
+                li {
+                    border-bottom: 1px solid #d7d7d7;
+                    list-style: none;
+                    float: left;
+                    width: 35px;
+                    height: 49px;
+                    line-height: 49px;
+                    position: relative;
+
+                    &:first-child {
+                        border-left: 1px solid #d7d7d7;
+                    }
+
+                    &:last-child {
+                        border-right: 1px solid #d7d7d7;
+                    }
+
+                    span {
+                        position: absolute;
+                        top: 17px;
+                        width: 100%;
+                        height: 16px;
+                        background-color: #bfe04c;
+
+                        &.start {
+                            .rounded-corners(8px 0px 0px 8px);
+                        }
+
+                        &.end {
+                            .rounded-corners(0px 8px 8px 0px);
+                            width: 99%;
+                        }
+
+                        &.start.end {
+                            .rounded-corners(8px 8px 8px 8px);
+                        }
+
+                        &.public-holiday {
+                            opacity: 0.6;
+                        }
+                    }
+
+                    &.weekend {
+                        background-color: #eeeeee;
+                        .grey-75-font;
+
+                        span {
+                            background-color: #bfe04c;
+                            opacity: 0.6;
+                        }
+                    }
+
+                    &.today {
+                        background-color: #ddeffe;
+                        .white-font;
+                    }
+
+                    i {
+                        position: absolute;
+                        top: 17px;
+                        height: 16px;
+                        z-index: 1;
+                    }
+
+                    .tooltip-inner {
+                        min-width: 120px;
+                        text-align: left;
+                        padding: 7px 10px;
+
+                        p {
+                            margin: 3px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .leave-calendar-mobile {
+        display: none;
+        margin: -20px;
+
+        @media (max-width: 1000px) {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            margin: -15px;
+        }
+
+        @media (max-width: 420px) {
+            margin: -10px;
+        }
+
+        .leave-calendar-scroll {
+            max-height: 800px;
+            position: relative;
+            float: left;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .leave-calendar-mobile-day {
+            float: left;
+            width: 100%;
+
+            .leave-calendar-loading {
+                position: relative;
+                float: left;
+                width: 100%;
+                height: 50px;
+            }
+
+            ul {
+                li {
+                    list-style: none;
+                    float: left;
+                    width: 100%;
+
+                    h3 {
+                        background-color: #f3f3f3;
+                        width: 100%;
+                        float: left;
+                        display: block;
+                        padding: 5px;
+                        margin: 0;
+                    }
+
+                    .leave-calendar-mobile-day-employee {
+                        padding: 5px 0;
+                        float: left;
+                        width: 100%;
+
+                        ul {
+                            li {
+                                margin-left: 5px;
+                                padding: 5px;
+
+                                &.public-holiday {
+                                    .grey-75-font;
+                                }
+                            }
+                        }
+                    }
+
+                    &.weekend {
+                        .grey-75-font;
+
+                        h3 {
+                            .grey-75-font;
+                        }
+                    }
+
+                    &.today {
+                        background-color: #ddeffe;
+
+                        h3 {
+                            background-color: #357ebd;
+                            .white-font;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sticky-section {
+    @media (min-width: 1001px) {
+        .leave-calender-sticky-header {
+            position: fixed;
+            z-index: 2;
+            padding: 20px 51px 0 51px;
+            width: 100%;
+            left: 0;
+            background-color: white;
+            border-bottom: 1px solid #d7d7d7;
+
+            .leave-calendar-header-days {
+                height: 47px;
+            }
+        }
+
+        .leave-calendar-content {
+            margin-top: 103px;
+        }
+    }
+}

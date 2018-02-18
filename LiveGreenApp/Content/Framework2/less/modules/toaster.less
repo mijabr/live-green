@@ -1,0 +1,132 @@
+﻿#toast-container {
+    padding:10px;
+    
+    z-index:9999999;
+    @media screen and (max-width: 500px) {
+        width:100%; 
+    }
+
+    .toast {
+        .box-shadow;
+        .rounded-corners(5px);
+        opacity: 1;
+        background-image: none !important;
+
+        &:before {
+            font-family: 'icomoon';
+            font-size: 24px;
+            .white-font;
+            content: '\e6a2';
+            float: left;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            width: 24px;
+            height: 24px;
+            margin-top: -12px;
+            line-height: 24px;
+            @media screen and (max-width: 500px) {
+                top:17px;
+            }
+        }
+
+        &.toast-success {
+            background-color: #29cc44;
+
+            &:before {
+                content: '\e623';
+            }
+        }
+
+        &.toast-info {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            .grey-37-font;
+
+            &:before {
+                content: '\e6a2';
+                .grey-37-font;
+            }
+
+            .toast-close-button {
+                .grey-37-font;
+
+                &:hover, &:focus {
+                    .grey-37-font;
+                }
+            }
+        }
+
+        &.toast-warning {
+            background-color: #fcb215;
+
+            &:before {
+                content: '\e65c';
+            }
+        }
+
+        &.toast-error {
+            background-color: #e53934;
+
+            &:before {
+                content: '\e6a2';
+            }
+        }
+
+        .toast-close-button {
+            opacity: 1;
+            text-shadow: none;
+
+            &:hover, &:focus {
+                .white-font;
+                text-shadow: none;
+                outline: none;
+            }
+        }
+
+        .toast-message {
+            .roboto-font;
+        }
+    }
+
+    &.toast-top-center {
+        width:300px;
+        left:50%;
+        margin-left:-150px;
+        .toast {
+            @media screen and (max-width: 500px) {
+                width:100%; 
+                padding-bottom:40px;
+            }
+
+            .toast-close-button {
+                @media screen and (max-width: 500px) {
+                    bottom: 0px; 
+                    width: 100%; 
+                    position: absolute; 
+                    height: 35px; 
+                    top: auto; 
+                    right: 0; 
+                    border-top:1px solid #fff;
+                    &:before{
+                        font-size:14px;
+                        content:'OK';
+                        line-height:35px;
+                    }
+                    span{
+                        display:none;
+                    }
+                }
+            }
+
+            &.toast-info {
+                .toast-close-button {
+                    @media screen and (max-width: 500px) {
+                        border-top:1px solid #ccc;
+                    }
+                }
+            }
+        }
+    }
+}

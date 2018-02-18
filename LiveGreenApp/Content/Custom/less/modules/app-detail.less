@@ -1,0 +1,118 @@
+﻿.app-detail-top {
+    background-color: #e6f2fb;
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .app-detail-top-left {
+        display: block;
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: #1d92ef;
+        .white-font;
+        font-size: 60px;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    .app-detail-top-right {
+        margin-left: 100px;
+        padding: 20px;
+
+        h3 {
+            .grey-37-font;
+            font-weight: bold;
+            font-size: 18px;
+            float: left;
+            width: 80%;
+        }
+
+        p {
+            margin: 0;
+            float: left;
+            width: 80%;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            float: right;
+            right: 30px;
+        }
+    }
+}
+
+.app-detail-bottom {
+    margin-top: 40px;
+    clear: both;
+    float: left;
+    width: 100%;
+
+    .app-detail-description {
+        float: left;
+        width: 40%;
+        padding-right: 20px;
+
+        p, li {
+            font-size: 14px;
+        }
+
+        ul {
+            li {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .app-detail-screenshot {
+        float: right;
+        width: 58%;
+
+        .app-detail-screenshot-large {
+            margin-bottom: 10px;
+        }
+
+        .app-detail-screenshot-description {
+            .grey-60-font;
+            font-size: 11px;
+            height: 40px;
+        }
+
+        .app-detail-screenshot-small {
+            ul {
+                li {
+                    width: 32%;
+                    float: left;
+                    list-style: none;
+                    margin-right: 2%;
+
+                    img {
+                        display: block;
+                        max-width: 100%;
+                    }
+
+                    &:last-child {
+                        margin-right: 0%;
+                    }
+                }
+            }
+        }
+
+        .carousel-control {
+            height: 69%;
+            background: transparent;
+            filter: none;
+            vertical-align: middle;
+            line-height: 326px;
+            width: 10%;
+            font-size: 28px;
+        }
+    }
+
+    fieldset {
+        padding: 0 0 40px 0;
+    }
+}

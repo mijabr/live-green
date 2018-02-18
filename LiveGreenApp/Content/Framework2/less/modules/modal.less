@@ -1,0 +1,127 @@
+﻿.modal {
+    .modal-content {
+        .rounded-corners(5px);
+
+        .model-title {
+            word-break: break-all;
+        }
+
+        .modal-header {
+            border-bottom: none;
+            padding: 30px;
+
+            .close {
+                margin: -15px -15px 0 0;
+                outline: none !important;
+            }
+        }
+
+        .modal-body {
+            padding: 0 30px;
+
+            p {
+                font-size: 14px;
+                .grey-37-font;
+                margin-bottom: 0;
+            }
+
+            &.modal-body-space-10{
+                p{
+                    margin:10px 0;
+                }
+            }
+
+            .modal-error-message {
+                border: 2px solid #e53934;
+                .rounded-corners(3px);
+                padding: 8px 8px 8px 40px;
+                margin-bottom: 10px;
+
+                &:before {
+                    content: "\e65c";
+                    font-family: 'icomoon';
+                    float: left;
+                    margin-left: -30px;
+                    .red-font;
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+            }
+
+            .modal-file-preview {
+                canvas {
+                    height: 40px;
+                }
+            }
+        }
+
+        .modal-footer {
+            padding: 30px;
+            border-top: none;
+            margin-top: 0;
+            clear: both;
+
+            @media (max-width: 1000px) {
+                padding: 20px;
+            }
+
+            &.modal-footer-center {
+                text-align: center;
+            }
+
+            &.modal-footer-left {
+                text-align: left;
+            }
+
+            .btn + .btn {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    &.grey-top-bottom-modal {
+        .modal-content {
+            .rounded-corners(0px 0px 0px 0px);
+
+            .modal-header {
+                background-color: #f2f2f2;
+                padding: 15px;
+                border-bottom: 1px solid #cccccc;
+
+                h2 {
+                    font-size: 20px;
+                }
+
+                .close {
+                    margin: 0;
+                    opacity: 0.8;
+                    font-weight: normal;
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .modal-body {
+                padding: 25px;
+                max-height: ~"calc(100vh - 210px)";
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .modal-footer {
+                border-top: 1px solid #cccccc;
+                background-color: #f2f2f2;
+            }
+        }
+    }
+}
+
+.modal-backdrop.in {
+    filter: alpha(opacity=80);
+    opacity: .8;
+}

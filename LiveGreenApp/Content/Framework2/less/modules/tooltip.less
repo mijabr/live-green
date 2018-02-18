@@ -1,0 +1,79 @@
+﻿.tooltip-wrap{
+    position:relative;
+    .tooltip-content{
+        display:none;
+        background-color:rgba(69,72,79,0.8);
+        .white-font;
+        position:absolute;
+        left:100%;
+        top:-20%;
+        width:260px;
+        padding:5px 5px 5px 36px;
+        margin-left:16px;
+        z-index:1;
+        &.shown{
+            display:block;
+        }
+        .tooltip-content-arrow{
+            position:absolute;
+            left:-16px;
+            top:50%;
+            margin-top:-10px;
+            width: 0;
+	        height: 0;
+	        border-top: 10px solid transparent;
+	        border-right: 16px solid rgba(69,72,79,0.8);
+	        border-bottom: 10px solid transparent;
+        }
+        .icon{
+            position:absolute;
+            display:block;
+            float:left;
+            width:24px;
+            height:24px;
+            font-size:24px;
+            text-align:center;
+            left: 7px;
+            top: 50%;
+            margin-top:-18px;
+        }
+        &.tooltip-content-bottom{
+            width:160px;
+            padding:5px;
+            left:auto;
+            top:100%;
+            margin-left:3px;
+            text-align: center;
+            font-weight:normal;
+            font-size:11px;
+            background-color:rgba(0,0,0,0.8);
+            .tooltip-content-arrow{
+                left:50%;
+                top:2px;
+                border-top:none;
+	            border-left: 8px solid transparent;
+	            border-right: 8px solid transparent;
+	            border-bottom: 8px solid rgba(0,0,0,0.8);
+                margin-left: -8px;
+            }
+        }
+    }
+
+    input.tooltip-link:focus + .tooltip-content{
+        display:block;
+    }
+    .tooltip-link-hover:hover + .tooltip-content{
+        display:block;
+    }
+}
+
+.tooltip{
+    .tooltip-arrow{
+        opacity:0.9;
+    }
+    .tooltip-inner{
+        font-weight:normal;
+        background-color:rgba(0,0,0,0.9);
+        .rounded-corners(0px 0px 0px 0px);
+    }
+}

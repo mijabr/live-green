@@ -1,0 +1,255 @@
+﻿.my-attache-online {
+    float: left;
+    position: relative;
+
+    .my-attache-online-text {
+        .white-font;
+        font-size: 20px;
+        line-height: 20px;
+        vertical-align: middle;
+        float: left;
+        line-height: 60px;
+        border-right: 1px solid #359df1;
+        .bi &{
+            line-height: 50px;
+            @media (max-width: 1000px) {
+                display:none;
+            }
+        }
+        .icon {
+            font-size: 24px;
+            margin-right: 10px;
+            float: left;
+            display: block;
+            line-height: 50px;
+            margin-left: -2px;
+        }
+
+        &:hover {
+            text-decoration: none;
+            background-color: #0e77cb;
+        }
+
+        .burger-menu {
+            display: block;
+            position: relative;
+            height: 60px;
+            width: 60px;
+            .white-font;
+            font-size: 24px;
+            float: left;
+            text-align: center;
+            .bi &{
+                height: 50px;
+            }
+            &:before {
+                content: "\e89f";
+                font-family: 'icomoon';
+                .bi &{
+                    content: "\e8ae";
+                }
+            }
+        }
+    }
+
+    .my-attache-online-sitename {
+        display: block;
+        float: left;
+        .white-font;
+        font-size: 20px;
+        padding: 0 15px;
+        max-width: 700px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .bi &{
+            font-size:18px;
+            @media (max-width: 600px) {
+                display:block;
+            }
+
+            a{
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+
+        @media (max-width: 1600px) {
+            max-width: 600px;
+        }
+
+        @media (max-width: 1300px) {
+            max-width: 520px;
+        }
+
+        @media (max-width: 1200px) {
+            max-width: 450px;
+        }
+
+        @media (max-width: 1100px) {
+            max-width: 350px;
+        }
+
+        @media (max-width: 600px) {
+            display: none;
+        }
+
+        img {
+            height: 50px;
+            float: left;
+            padding:6px;
+            margin: 5px 0 0 0;
+            max-width: 350px;
+
+            & + span {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .my-attache-online-panel {
+        position: absolute;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 5px #bbbbbb;
+        .rounded-corners(0px 0px 0px 0px);
+        border: none;
+        z-index: 1;
+        width: 550px;
+        padding: 15px 15px 40px 15px;
+        margin-top: 0;
+        left: 2px;
+
+        @media (max-width: 600px) {
+            width: 420px;
+        }
+
+        @media (max-width: 450px) {
+            width: 360px;
+        }
+
+        @media (max-width: 400px) {
+            width: 250px;
+        }
+
+        &:before {
+            content: '';
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 7px solid #ffffff;
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            .transition;
+        }
+
+        ul {
+            padding-bottom: 10px;
+            li {
+                list-style: none;
+
+                .spinner{
+                    line-height: 10px;
+                }
+
+                a {
+                    .grey-37-font;
+                    text-decoration: none;
+                    float: left;
+                    width: 120px;
+                    height: 120px;
+                    font-size: 13px;
+                    position: relative;
+                    vertical-align: bottom;
+                    color: white;
+                    text-align: center;
+                    margin: 5px;
+
+                    @media (max-width: 450px) {
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                    .icon {
+                        width: 100%;
+                        top: 15px;
+                        left: 0;
+                        position: absolute;
+                        font-size: 54px;
+                        text-align: center;
+
+                        @media (max-width: 450px) {
+                            top: 8px;
+                            font-size: 48px;
+                        }
+                    }
+
+                    .my-attache-online-app-name {
+                        position: absolute;
+                        width: 90%;
+                        left: 5%;
+                        bottom: 10px;
+                        line-height: 14px;
+                        text-align: center;
+                        font-size: 12px;
+                        overflow: hidden;
+
+                        @media (max-width: 450px) {
+                            bottom: 8px;
+                        }
+                    }
+                }
+
+                &.burger-menu-loading {
+                    position: relative;
+                    height: 41px;
+                    width: 100%;
+                    float: left;
+                }
+
+                &.selected, &:hover {
+                    a {
+                        text-decoration: none;
+
+                        &:before {
+                            background-color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+         div {
+            position: absolute;
+            right: 21px;
+            bottom: 15px;
+
+            p {
+                margin-top: 20px;
+                margin-bottom: 0;
+
+                a {
+                    .black-font;
+                }
+            }
+        }
+    }
+
+    &.open {
+        .my-attache-online-text {
+            .grey-60-font;
+
+            .burger-menu {
+                background-color: #999;
+
+                &:before {
+                    background-color: #999;
+                }
+
+                &:after {
+                    background-color: #999;
+                }
+            }
+        }
+    }
+}

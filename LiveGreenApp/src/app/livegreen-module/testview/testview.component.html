@@ -1,0 +1,22 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <div class="testview testview-feature"><span class="testview-heading">Feature:</span>{{testResult.feature}}</div>
+        <div class="testview testview-scenario"><span class="testview-heading">Scenario:</span>{{testResult.scenario}}</div>
+        <div class="testview testview-name"><span class="testview-heading">Name:</span>{{testResult.name}}</div>
+    </div>
+    <div class="modal-body">
+        <div class="testview testview-success"><span class="testview-heading">Result:</span>{{testResult.success ? "Pass" : "Fail"}}</div>
+        <div class="testview testview-duration"><span class="testview-heading">Duration:</span>{{testResult.duration | timeSpan}}</div>
+        <div class="testview testview-build-result-key"><span class="testview-heading">Build Key:</span>{{testResult.buildResultKey}}</div>
+        <div class="testview testview-categories"><span class="testview-heading">Categories:</span>{{testResult.categories}}</div>
+        <div class="testview testview-message" *ngIf="!testResult.success"><span class="testview-heading">Error Message:</span>{{testResult.message}}</div>
+        <div class="testview testview-stack-trace" *ngIf="!testResult.success"><span class="testview-heading">Error Stack Trace:</span>{{testResult.stackTrace}}</div>
+    </div>
+    <div class="modal-footer">
+        <div class="btn btn-primary" (click)="clickHistory();">History</div>
+        <div class="btn btn-primary">Run Now</div>
+        <div class="btn btn-primary">Watch Video</div>
+        <a class="btn btn-primary" [attr.href]="url | safeUrl" download="{{filename}}">Download Log File</a>
+        <div class="btn btn-primary" (click)="close();">Close</div>
+    </div>
+</div>

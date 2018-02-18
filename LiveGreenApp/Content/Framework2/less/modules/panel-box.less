@@ -1,0 +1,93 @@
+﻿.panel-box {
+    .box-shadow();
+    padding: 20px;
+    border: 1px solid #d7d7d7;
+    background-color: white;
+    float:left;
+    width:100%;
+    position:relative;
+    @media (max-width: 600px) {
+        padding:15px;
+    }
+    @media (max-width: 420px) {
+        padding:10px;
+    }
+    &.min-height-panel{
+        min-height: 600px;
+    }
+    .panel-box-overlay{
+        margin:-20px;
+        background-color:white;
+
+        fieldset{
+            margin:0;
+        }
+        .section-top{
+            padding:20px 0 5px 0;
+        }
+    }
+
+    &.transparent-panel{
+       background-color: transparent;
+       .box-shadow(rgba(0,0,0,0) 0px 1px 3px, rgba(0,0,0,0) 0px 1px 3px);
+       border: none;
+    }
+}
+
+.grey-box{
+    background-color:#f5f5f5;
+    .rounded-corners;
+    padding:20px;
+    margin-top:20px;
+    ul{
+        li{
+            margin-left:20px;
+            margin-bottom:10px;
+        }
+    }
+}
+
+.right-panel-title-top{
+    background-color:#ffffff;
+    padding:20px;
+    float:left;
+    width:100%;
+    h1{
+        font-size:20px;
+        margin-bottom:5px;
+    }
+    p{
+        .grey-37-font;
+        margin-bottom:0;
+    }
+    
+    @media (max-width: 600px) {
+        padding:15px;
+    }
+
+    &.right-panel-title-top-bi{
+        background-color:transparent;
+        @media (min-width: 1201px) {
+            padding-left:30px;
+        }
+    }
+}
+
+.right-panel-content-bottom{
+    padding:40px;
+    float:left;
+    width:100%;
+    &.right-panel-content-bottom-no-padding{ 
+        padding:0;
+    }
+    &.right-panel-content-bottom-bi{
+        padding:30px;
+        padding-top:0;
+    }
+    @media (max-width: 1200px) {
+        padding:20px;
+    }
+    @media (max-width: 600px) {
+        padding:15px;
+    }
+}

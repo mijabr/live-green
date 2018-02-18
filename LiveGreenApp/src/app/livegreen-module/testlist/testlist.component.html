@@ -1,0 +1,34 @@
+<div class="testlist-wrap">
+
+  <div class="testlist-app-title">
+    <h1>LIVE GREEN</h1>
+  </div>
+
+  <div class="testlist-heading">Features</div>
+  <div class="testlist-feature" *ngFor="let feature of features" (click)="featureClick(feature);">
+    <div class="testlist-feature-title" [ngClass]="{'testlist-feature-title-selected':selectedFeature && feature.name == selectedFeature.name, 'testlist-feature-title-fail':feature.testCount != feature.testPassCount}">
+      <div class="testlist-feature-title-name">{{feature.name}}</div>
+      <div class="testlist-feature-title-result">{{getPassingString(feature)}}</div>
+      <div class="testlist-feature-title-time">{{feature.runDate | timeAgo}}</div>
+      <div class="testlist-feature-title-duration">{{feature.duration | timeSpan}}</div>
+    </div>
+  </div>
+    
+  <div *ngIf="selectedFeature" class="testlist-results">
+    <div class="testlist-heading">Test Results</div>
+    <fieldset class="no-padding-left-right">
+      <div class="testlist-results-title" [ngClass]="{'testlist-feature-title-fail':selectedFeature.testCount != selectedFeature.testPassCount}">
+        <div class="testlist-feature-title-name">{{selectedFeature.name}}</div>
+        <div class="testlist-feature-title-result">{{getPassingString(selectedFeature)}}</div>
+        <div class="testlist-feature-title-time">{{selectedFeature.runDate | timeAgo}}</div>
+        <div class="testlist-feature-title-duration">{{selectedFeature.duration | timeSpan}}</div>
+      </div>
+      <attache-data-table [isHorizontalScrolling]="false" [isAreaScrolling]="false" [isDatatableLoading]="isLoading" [showTopPagination]="false"
+      [headings]="headings" [content]="dataTable" (contentsChanged)="contentsChanged($event)" (dataTableLoaded)="dataTableLoaded($event)"
+      (dblclick)="doubleClickEvent($event)" (dataTableElementClicked)="dataTableElementClicked($event)" [showBottomPagination]="false"
+      [showRecordsPerPage]="false" [sortingMethod]="page" tableWrapperId="CompanyListWrapper" tableId="CompanyListDataTable"
+      [durationBetweenClick]="0" [isExtremeHigh]="false" [extremeHighItemHeight]="51"> </attache-data-table>
+    </fieldset>
+  </div>
+
+</div>

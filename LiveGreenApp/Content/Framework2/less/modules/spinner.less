@@ -1,0 +1,58 @@
+﻿.spinner {
+    font-size: 27px;
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+
+    &.white-spinner {
+        .white-font;
+    }
+
+    &.center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -13px 0 0 -13px;
+    }
+
+    &.middle {
+        position: absolute;
+        top: 50%;
+        margin: -13px 0 0 0;
+    }
+
+    .icon{
+        -webkit-animation: fa-spin 1s infinite steps(12);
+        animation: fa-spin 1s infinite steps(12);
+        display:inline-block;
+        width:27px;
+        height:27px;
+        line-height:27px;
+        text-align:center;
+        opacity:0.5;
+    }
+}
+
+
+.loading-mask{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:white;
+    z-index:1000;
+    display:none;
+    .checking-credentials &{
+        display:block;
+    }
+    p{
+        position:absolute;
+        top:50%;
+        margin-top:20px;
+        text-align:center;
+        width:100%;
+        display:none;
+    }
+}

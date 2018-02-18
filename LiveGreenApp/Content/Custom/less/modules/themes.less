@@ -1,0 +1,242 @@
+﻿@five-percentage: 5%;
+@ten-percentage: 10%;
+@twenty-percentage: 20%;
+@thirty-percentage: 30%;
+
+@color1: #82af13;
+@color2: #59c457;
+@color3: #4eb8af;
+@color4: #56afdd;
+@color5: #7b96db;
+@color6: #ba85da;
+@color7: #e57ba8;
+@color8: #f46868;
+@color9: #fb7f49;
+@color10: #f19508;
+@color11: #e4ac00;
+@color12: #868686;
+@color13: #769c00;
+@color14: #3cab38;
+@color15: #389e95;
+@color16: #1d92ef;
+@color17: #6583d1;
+@color18: #9a6dc8;
+@color19: #d05489;
+@color20: #e8454d;
+@color21: #f96422;
+@color22: #e77d00;
+@color23: #d09d00;
+@color24: #6a6a6a;
+@color25: #658600;
+@color26: #308b2c;
+@color27: #288b82;
+@color28: #1d81bb;
+@color29: #5673be;
+@color30: #874fa3;
+@color31: #d43384;
+@color32: #d22931;
+@color33: #d55319;
+@color34: #c56b00;
+@color35: #957d41;
+@color36: #535353;
+@color37: #587500;
+@color38: #0a7607;
+@color39: #167970;
+@color40: #006991;
+@color41: #4763ab;
+@color42: #714388;
+@color43: #a3256a;
+@color44: #b71b23;
+@color45: #b74507;
+@color46: #8a5d34;
+@color47: #7c693a;
+@color48: #333333;
+
+@iterations: 48;
+
+.define(@var) {
+    @colorSet: 'color@{var}';
+}
+
+.mixin-loop (@index) when (@index > 0) {
+    .theme-@{index} {
+        .define(@index);
+
+        .btn-theme {
+            color: #ffffff;
+            background-color: @@colorSet;
+            border-color: @@colorSet;
+
+            &:hover, &:focus {
+                background-color: darken(@@colorSet, @ten-percentage);
+                color: #ffffff;
+                border-color: darken(@@colorSet, @ten-percentage);
+            }
+        }
+
+        .btn-disabled, button:disabled {
+            &.btn-theme {
+                background-color: lighten(@@colorSet, @ten-percentage);
+                border-color: lighten(@@colorSet, @ten-percentage);
+            }
+
+            &:hover {
+                &.btn-theme {
+                    background-color: lighten(@@colorSet, @ten-percentage);
+                }
+            }
+        }
+
+        .top-menu {
+            background-color: @@colorSet;
+            border-left-color: lighten(@@colorSet, @five-percentage);
+
+            ul {
+                li {
+                    a {
+                        border-left-color: @@colorSet;
+                        border-right-color: @@colorSet;
+                    }
+
+                    &:hover, &.active {
+                        a {
+                            background-color: darken(@@colorSet, @ten-percentage);
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            &:after {
+                                border-top-color: darken(@@colorSet, @ten-percentage);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #companyTree {
+            .node {
+                background-color: @@colorSet;
+
+                &.selected {
+                    background-color: darken(@@colorSet, @twenty-percentage);
+                }
+            }
+        }
+
+        .color-scheme-wrap {
+            .color-scheme-picker {
+                li {
+                    a.theme-button-@{index} {
+                        .define(@index);
+
+                        &:before {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+
+        .theme-button-@{index} {
+            .define(@index);
+
+            &:before {
+                content: "\e600";
+                .white-font;
+                font-family: 'icomoon';
+                font-size: 18px;
+                line-height: 40px;
+            }
+        }
+
+        .header {
+            background-color: @@colorSet;
+
+            .user-control {
+                .dropdown {
+                    &.open {
+                        .dropdown-toggle {
+                            background-color: darken(@@colorSet, @ten-percentage);
+                        }
+                    }
+                }
+
+                .dropdown-toggle {
+                    &:hover {
+                        background-color: darken(@@colorSet, @ten-percentage);
+                    }
+                }
+            }
+        }
+
+        .my-attache-online {
+            .my-attache-online-text {
+                &:hover {
+                    background-color: darken(@@colorSet, @ten-percentage);
+                }
+
+                border-color: lighten(@@colorSet, @five-percentage);
+            }
+
+            &.open {
+                .my-attache-online-text {
+                    .burger-menu {
+                        background-color: darken(@@colorSet, @ten-percentage);
+
+                        &:before {
+                            background-color: darken(@@colorSet, @ten-percentage);
+                        }
+                    }
+                }
+            }
+
+            .my-attache-online-panel {
+                ul {
+                    li.my-attache-online-panel-link-last {
+                        a {
+                            background-color: @@colorSet;
+
+                            &.selected, &:hover {
+                                outline: 3px solid @@colorSet;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .invite-wrap {
+            .invite-top-icon {
+                background-color: @@colorSet;
+            }
+        }
+    }
+
+    .theme-button-@{index} {
+        .define(@index);
+        background-color: @@colorSet;
+    }
+
+    .theme-tile-@{index} {
+        .define(@index);
+        background-color: @@colorSet;
+
+        &.selected, &:hover {
+            outline: 3px solid @@colorSet;
+        }
+    }
+
+    .color-scheme-wrap .color-scheme-saved-color.color-scheme-saved-color-@{index} {
+        .define(@index);
+        background-color: @@colorSet;
+    }
+
+    .mixin-loop(@index - 1);
+}
+
+.mixin-loop (0) {
+}
+
+.mixin-loop(@iterations);

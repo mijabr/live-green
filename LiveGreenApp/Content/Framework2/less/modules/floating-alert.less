@@ -1,0 +1,37 @@
+﻿.floating-alert {
+    position: fixed;
+    padding: 20px;
+
+    @media (max-width: 767px) {
+        padding: 10px;
+    }
+
+    &.floating-alert-bottom {
+        bottom: 0;
+    }
+
+    &.floating-alert-left {
+        left: 0;
+    }
+
+    &.floating-alert-red {
+        .floating-alert-inner {
+            background-color: #e53934;
+            .white-font;
+            a{
+                .white-font;
+                text-decoration:underline;
+            }
+        }
+    }
+
+    .floating-alert-inner {
+        padding: 10px;
+        .rounded-corners;
+        .transition;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

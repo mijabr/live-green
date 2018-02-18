@@ -1,0 +1,82 @@
+﻿
+.profile-update-feature-app-centre {
+    float: left;
+    width: 100%;
+    padding: 30px 0;
+    background-color: #f5f6f7;
+    min-height: 809px;
+
+    fieldset {
+        padding: 0;
+    }
+
+    .my-profile {
+        width: 1220px;
+        margin: 0 auto;
+
+        .profile-heading {
+            font-size: 24px;
+            color: #000;
+            font-family: 'Roboto', Arial, Sans-Serif;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        form {
+            -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px, transparent 0px 0px 0px;
+            -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px, transparent 0px 0px 0px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px, transparent 0px 0px 0px;
+            padding: 20px;
+            border: 1px solid #d7d7d7;
+            background-color: white;
+            margin-bottom: 30px;
+            float: left;
+            width: 100%;
+
+            input.form-control {
+                border: 1px solid #ccc;
+                padding: 11px;
+                float: left;
+                width: 100%;
+                transition: border 0.3s linear;
+                -webkit-transition: border 0.3s linear;
+                -moz-transition: border 0.3s linear;
+                -o-transition: border 0.3s linear;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -ms-border-radius: 3px;
+                -o-border-radius: 3px;
+                border-radius: 3px;
+                font-size: 13px;
+                color: #000000;
+                -webkit-box-shadow: #dddddd 1px 1px 3px inset, transparent 0px 0px 0px;
+                -moz-box-shadow: #dddddd 1px 1px 3px inset, transparent 0px 0px 0px;
+                box-shadow: #dddddd 1px 1px 3px inset, transparent 0px 0px 0px;
+                position: relative;
+                height: 39px;
+
+                &:focus {
+                    border: 1px solid #1d92ef;
+                    .box-shadow(0px);
+                }
+            }
+
+            select.form-control {
+                height: 39px;
+
+                &:focus {
+                    border: 1px solid #1d92ef;
+                    box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.075), 0 0 0px rgba(102, 175, 233, 0.6);
+                }
+            }
+
+            label {
+                color: #5e5e5e;
+                margin-bottom: 5px;
+                float: left;
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+    }
+}

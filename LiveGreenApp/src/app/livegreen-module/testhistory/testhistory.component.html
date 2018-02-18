@@ -1,0 +1,23 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <div class="testview testview-feature"><span class="testview-heading">Feature:</span>{{testResult.feature}}</div>
+        <div class="testview testview-scenario"><span class="testview-heading">Scenario:</span>{{testResult.scenario}}</div>
+        <div class="testview testview-name"><span class="testview-heading">Name:</span>{{testResult.name}}</div>
+    </div>
+    <div class="modal-body">
+        <div class="testview testview-duration"><span class="testview-heading">Number of Runs:</span>{{numerOfRuns}}</div>
+        <div class="testview testview-duration"><span class="testview-heading">Average Duration:</span>{{averageDuration | timeSpan}}</div>
+        <div class="testview testview-success"><span class="testview-heading">Pass Rate:</span>{{passRate | percent}}</div>
+        <fieldset class="no-padding-left-right">
+            <attache-data-table [isHorizontalScrolling]="false" [isAreaScrolling]="false" [isDatatableLoading]="isLoading" [showTopPagination]="false"
+            [headings]="headings" [content]="dataTable" (contentsChanged)="contentsChanged($event)" (dataTableLoaded)="dataTableLoaded($event)"
+            (dblclick)="doubleClickEvent($event)" (dataTableElementClicked)="dataTableElementClicked($event)" [showBottomPagination]="false"
+            [showRecordsPerPage]="false" [sortingMethod]="page" tableWrapperId="CompanyListWrapper" tableId="CompanyListDataTable"
+            [durationBetweenClick]="0" [isExtremeHigh]="false" [extremeHighItemHeight]="51"> </attache-data-table>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <div class="btn btn-primary" (click)="back();">Back</div>
+        <div class="btn btn-primary" (click)="close();">Close</div>
+    </div>
+</div>

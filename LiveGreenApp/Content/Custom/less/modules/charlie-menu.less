@@ -1,0 +1,40 @@
+.charlie-menu{
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    h3{
+        .grey-37-font;
+        font-weight:500;
+        margin-bottom:10px;
+    }
+    li{
+        width: 25%;
+        display: inline-block;
+        margin-bottom:30px;
+        padding:10px;
+        @media (max-width: 1600px) {
+            width: 33%;
+        }
+        @media (max-width: 1200px) {
+            width: 50%;
+        }
+        ul{
+            li{
+                display:list-item;
+                width: 100%;
+                list-style-type:none;
+                margin-bottom:5px;
+                padding:0;
+                &:before{
+                    content: "\e893";
+                    font-family:'icomoon';
+                    font-size:16px;
+                    float:left;
+                    line-height:16px;
+                    margin-right:5px;
+                    .grey-37-font;
+                }
+            }
+        }
+    }
+}
